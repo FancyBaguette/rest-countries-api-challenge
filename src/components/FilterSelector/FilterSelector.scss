@@ -1,0 +1,13 @@
+.filter-selector-wrapper {
+    background-color: aqua;
+    position: relative;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.filter-selector-dropdown {
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: 30px;
+}
