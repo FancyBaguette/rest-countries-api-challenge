@@ -41,30 +41,18 @@ const CountryDetails = (props) => {
     },[countryObject])
 
     const getCurrencies = (obj) => {
-        const currencyCodes = []
-        for (const currency in obj) {
-            currencyCodes.push(currency)
-        }
-        return currencyCodes.map(code => {
+        return Object.keys(obj).map(code => {
             return countryObject.currencies[code].name
-        })
+        }).join(', ')
     }
 
     const getLanguages = (obj) => {
-        const languageCodes = []
-        for (const language in obj) {
-            languageCodes.push(language)
-        }
-        return languageCodes.map((code, index) => {
-            return index === languageCodes.length - 1 ? `${countryObject.languages[code]}` : `${countryObject.languages[code]}, `
-        })
+        return Object.keys(obj).map(code => {
+            return countryObject.languages[code]
+        }).join(', ')
     }
 
-    const formatNativeNames = (array) => {
-        return array.map((foo, index) => {
-            return index === array.length - 1 ? `${array[index]}` : `${array[index]}, `
-        })
-    }
+    const formatNativeNames = (array) => array.join(', ')
 
     return (
         countryObject && (
