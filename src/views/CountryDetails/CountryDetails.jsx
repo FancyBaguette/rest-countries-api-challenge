@@ -79,18 +79,17 @@ const CountryDetails = (props) => {
                     <p><span>Languages:</span> {getLanguages(countryObject.languages)}</p>
                 </div>
 
-                
-                { countryBorders &&
-                    countryBorders.map(border => {
-                        return (
-                            <div className="borders-data">
-                                <Link to={`/details/${border.code}`}>
-                                    <p>{border.name}</p>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
+                <div className="borders-wrapper">
+                    { countryBorders &&
+                        countryBorders.map(border => {
+                            return (
+                                    <Link to={`/details/${border.code}`}>
+                                        <p>{border.name}</p>
+                                    </Link>
+                            )
+                        })
+                    }
+                </div>
             </main>
         )
     )
