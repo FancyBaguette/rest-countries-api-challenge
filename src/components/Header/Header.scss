@@ -1,2 +1,33 @@
+@use '../../scss/_colors.scss';
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, .3);
+}
 
+.header--dark {
+    background-color: colors.$dark-mode-elements;
+    color: colors.$white
+}
+
+.header__title {
+    font-weight: 800;
+}
+
+.header__theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.theme-icon {
+    width: 16px;
+    aspect-ratio: 1/1;
+}

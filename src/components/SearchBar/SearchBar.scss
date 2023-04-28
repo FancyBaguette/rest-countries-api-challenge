@@ -1,0 +1,26 @@
+@use '../../scss/_colors.scss';
+
+.search-bar {
+    display: block;
+    width: 100%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, .1);
+    background-image: url('../../assets/icons/search-gray.svg');
+    background-size: 16px 16px;
+    background-position: center left 12px;
+    background-repeat: no-repeat;
+}
+
+.search-bar--dark {
+    background-image: url('../../assets/icons/search-white.svg');
+    background-color: colors.$dark-mode-elements;
+    color: colors.$white;
+    &::placeholder {
+        opacity: 1;
+    }
+}

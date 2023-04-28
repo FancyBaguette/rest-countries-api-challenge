@@ -1,0 +1,33 @@
+@use '../../scss/_colors.scss';
+
+.country-card {
+    max-width: 300px;
+    background-color: colors.$white;
+    color: #000;
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, .1);
+    border-radius: 8px;
+    img {
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    // Selects all spans where a paragraph is the parent
+    p > span {
+        font-weight: 600;
+    }
+}
+
+.country-card__data {
+    padding: 1.5rem;
+}
+
+.country-card__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: 1.125em;
+}
+
+.country-card--dark {
+    background-color: colors.$dark-mode-elements;
+    color: colors.$white;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import CountryBlock from "../CountryBlock/CountryBlock"
+import './CountryList.scss'
 
 const CountryList = (props) => {
 
@@ -42,7 +43,7 @@ const CountryList = (props) => {
     },[countriesArray, props.searchQuery, props.regionFilter])
 
     return (
-        <>
+        <div className="country-list">
             {
 
                 !filteredCountriesArray ? <p>Loading...</p> :
@@ -60,7 +61,7 @@ const CountryList = (props) => {
                 : <p>No countries matching your criteria</p>
 
             }
-        </>
+        </div>
     )
 }
 

@@ -1,13 +1,45 @@
+@use '../../scss/_colors.scss';
+
 .filter-selector-wrapper {
-    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    background-color: colors.$white;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, .1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
     position: relative;
     max-width: 200px;
     cursor: pointer;
 }
 
+.filter-selector-wrapper__icon {
+    width: 16px;
+    aspect-ratio: 1/1;
+}
+
 .filter-selector-dropdown {
     width: 100%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$white;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, .1);
     position: absolute;
-    top: 30px;
+    border-radius: 8px;
+    padding: 1rem;
+    top: 60px;
+    left: 0;
+    button {
+        text-align: left;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        color: inherit;
+    }
+}
+
+.filter-selector-wrapper--dark,
+.filter-selector-dropdown--dark {
+    background-color: colors.$dark-mode-elements;
+    color: colors.$white;
 }

@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link, useParams} from "react-router-dom";
+import { useEffect, useState, useContext } from "react"
+import { ThemeContext } from '../../context/ThemeContext'
+import { Link, useParams} from "react-router-dom"
+import classNames from "classnames"
+import './CountryDetails.scss'
 
 const CountryDetails = (props) => {
 
@@ -8,6 +11,7 @@ const CountryDetails = (props) => {
     const [countryObject, setCountryObject] = useState(null) 
     const [countryBorders, setCountryBorders] = useState(null)
     const [countryNativeNames, setCountryNativeNames] = useState(null)
+    const {isThemeDark} = useContext(ThemeContext)
 
     useEffect(() => {
         fetch(`https://restcountries.com/v3.1/alpha?codes=${name}`)
@@ -56,8 +60,13 @@ const CountryDetails = (props) => {
 
     return (
         countryObject && (
-            <main>
-                <Link to='/'>
+            <div className={classNames('country-details', {'country-details--dark': isThemeDark})}>
+                <Link 
+                    className={classNames
+                        ('nav-btn', 'go-back-btn', {'nav-btn--dark': isThemeDark}, {'go-back-btn--dark': isThemeDark})
+                    } 
+                    to='/'
+                >
                     <p>Back</p>
                 </Link>
 
@@ -65,7 +74,7 @@ const CountryDetails = (props) => {
 
                 <h1>{countryObject.name.common}</h1>
 
-                <div className="data-block">
+                <div className="country-details__data-block">
                     <p><span>Native Names:</span> {countryNativeNames && formatNativeNames(countryNativeNames)}</p>
                     <p><span>Population:</span> {countryObject.population}</p>
                     <p><span>Region:</span> {countryObject.region}</p>
@@ -73,24 +82,32 @@ const CountryDetails = (props) => {
                     <p><span>Capital:</span> {countryObject.capital}</p>
                 </div>
 
-                <div className="data-block">
+                <div className="country-details__data-block">
                     <p><span>Top Level Domain:</span> {countryObject.tld}</p>
                     <p><span>Currencies:</span> {getCurrencies(countryObject.currencies)}</p>
                     <p><span>Languages:</span> {getLanguages(countryObject.languages)}</p>
                 </div>
 
-                <div className="borders-wrapper">
-                    { countryBorders &&
-                        countryBorders.map(border => {
-                            return (
-                                    <Link to={`/details/${border.code}`}>
-                                        <p>{border.name}</p>
-                                    </Link>
-                            )
-                        })
-                    }
-                </div>
-            </main>
+                { countryBorders &&
+                    <>
+                        <h2>Border Countries:</h2>
+                        <div className="borders-wrapper">
+                            {
+                                countryBorders.map(border => {
+                                    return (
+                                            <Link 
+                                                className={classNames('nav-btn', 'border-btn', {'nav-btn--dark': isThemeDark})} 
+                                                to={`/details/${border.code}`}
+                                            >
+                                                <p>{border.name}</p>
+                                            </Link>
+                                    )
+                                })
+                            }
+                        </div>
+                    </>
+                }
+            </div>
         )
     )
 }

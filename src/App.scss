@@ -1,0 +1,14 @@
+@use './scss/_colors.scss';
+
+.app-container {
+    min-height: 100vh;
+    background-color: colors.$light-mode-background;
+}
+
+.app-container--dark {
+    background-color: colors.$dark-mode-background;
+}
+
+.main-content-wrapper {
+    padding: 2rem 1rem;
+}

@@ -1,0 +1,57 @@
+@use '../../scss/_colors.scss';
+
+.country-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+    p > span {
+        // Selects all spans where a paragraph is the parent
+        font-weight: 600;
+    }
+    img {
+        aspect-ratio: 4/3;
+    }
+}
+
+.country-details__data-block {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.country-details--dark {
+    color: colors.$white
+}
+
+.nav-btn {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, .1);
+    padding: .125em 1em;
+}
+
+.go-back-btn {
+    max-width: 120px;
+    text-align: center;
+    background-image: url('../../assets/icons/left-arrow-black.svg');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center left 16px;
+}
+
+.border-btn {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.borders-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+}
+
+.nav-btn--dark {
+    background-color: colors.$dark-mode-elements;
+}
+
+.go-back-btn--dark {
+    background-image: url('../../assets/icons/left-arrow-white.svg');
+}

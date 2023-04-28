@@ -3,3 +3,8 @@ A [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/rest-coun
 created with React and Sass
 
 Completion status: Funcionality done, all there's left to do is styling
+
+### Things i learned:
+- Applying conditional CSS classes in React with 'classnames' library
+- React context API
+- REST Countries API
