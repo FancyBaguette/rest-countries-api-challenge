@@ -24,3 +24,10 @@
         opacity: 1;
     }
 }
+
+@media (min-width: 692px) {
+    .search-bar {
+        max-height: 60px;
+        max-width: 500px;
+    }
+}
