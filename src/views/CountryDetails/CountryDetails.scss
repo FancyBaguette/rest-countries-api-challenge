@@ -4,16 +4,35 @@
     display: flex;
     flex-direction: column;
     gap: 1.375rem;
+
+    p,span,a {
+        font-size: 18px;
+    }
+
     p > span {
         // Selects all spans where a paragraph is the parent
         font-weight: 600;
     }
-    img {
-        aspect-ratio: 4/3;
-    }
 }
 
-.country-details__data-block {
+.country-details__data-wrapper,
+.data-wrapper__trivia-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+}
+
+.country-details__flag-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.country-details__flag {
+    aspect-ratio: 4/3;
+    max-height: 450px;
+}
+
+.trivia-wrapper__trivia-block {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -29,8 +48,10 @@
 }
 
 .go-back-btn {
+    display: block;
     max-width: 120px;
     text-align: center;
+    margin-bottom: 2rem;
     background-image: url('../../assets/icons/left-arrow-black.svg');
     background-size: 16px 16px;
     background-repeat: no-repeat;
@@ -42,10 +63,20 @@
     font-size: .9rem;
 }
 
-.borders-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .5rem;
+.data-wrapper__borders-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.borders-wrapper__border-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .nav-btn--dark {
@@ -54,4 +85,42 @@
 
 .go-back-btn--dark {
     background-image: url('../../assets/icons/left-arrow-white.svg');
+}
+
+@media (min-width: 785px) {
+    .data-wrapper__trivia-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .country-details__data-wrapper {
+        h1,h2 {
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .country-details {
+        flex-direction: row;
+        gap: 5rem;
+    }
+    .country-details__data-wrapper {
+        flex-grow: 1;
+        padding: 2rem 0;
+        h1 {
+            margin-bottom: 1rem;
+        }
+    }
+    .data-wrapper__trivia-wrapper {
+        justify-content: space-between;
+    }
+    .trivia-wrapper__trivia-block {
+        min-width: 300px;
+    }
+    .country-details__data-wrapper {
+        h1,h2 {
+            text-align: left;
+        }
+    }
 }
