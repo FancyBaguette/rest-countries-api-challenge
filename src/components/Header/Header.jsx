@@ -16,7 +16,10 @@ const Header = () => {
 
             <button 
                 className='header__theme-toggle-btn'
-                onClick={() => setIsThemeDark(prevState => !prevState)}
+                onClick={() => {
+                    setIsThemeDark(prevState => !prevState)
+                    localStorage.setItem('rest-countries-dark-theme', !JSON.parse(localStorage.getItem('rest-countries-dark-theme')))
+                }}
             >
                 <img className='theme-icon' src={`${isThemeDark ? FilledMoon : HollowMoon}`}/>
                 Dark mode

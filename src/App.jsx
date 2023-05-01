@@ -9,7 +9,9 @@ import "./App.scss"
 
 const App = () => {
 
-    const [isThemeDark, setIsThemeDark] = useState(false)
+    const [isThemeDark, setIsThemeDark] = useState(
+        () => JSON.parse(localStorage.getItem('rest-countries-dark-theme')) || false
+    )
 
     return (
         <div className={classNames('app-container', {'app-container--dark': isThemeDark})}>
