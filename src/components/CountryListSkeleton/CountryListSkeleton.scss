@@ -1,0 +1,46 @@
+.country-list__skeleton-card {
+    width: 300px;
+    height: 375.75px;
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, .1);
+    border-radius: 8px;
+}
+
+.skeleton-card__card-data {
+    padding: 1.5rem;
+}
+
+.skeleton-card__box {
+    background: linear-gradient(270deg, #e8e8e8, #b1b1b1);
+    background-size: 400% 400%;
+    animation: LoadingAnimation 3s ease infinite;
+}
+
+.skeleton-card__box--dark {
+    background: linear-gradient(270deg, #5d5d63, #746a86);
+    background-size: 400% 400%;
+}
+
+.skeleton-card__box--flag {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    min-height: 180px;
+    aspect-ratio: 5/3;
+}
+
+.skeleton-card__box--title {
+    width: 200px;
+    min-height: 33px;
+    margin-top: 1rem;
+}
+
+.skeleton-card__box--paragraph {
+    width: 100px;
+    min-height: 15px;
+    margin: 1rem 0;
+}
+
+@keyframes LoadingAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

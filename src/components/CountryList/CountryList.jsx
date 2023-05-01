@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import CountryBlock from "../CountryBlock/CountryBlock"
+import CountryListSkeleton from "../CountryListSkeleton/CountryListSkeleton"
 import './CountryList.scss'
 
 const CountryList = (props) => {
@@ -48,7 +49,7 @@ const CountryList = (props) => {
         <div className="country-list">
             {
 
-                !filteredCountriesArray ? <p>Loading...</p> :
+                !filteredCountriesArray ? <CountryListSkeleton amount={15}/> :
                 filteredCountriesArray.length > 0 ?
                     filteredCountriesArray.map(country => {
                         return <CountryBlock
@@ -59,7 +60,7 @@ const CountryList = (props) => {
                             population={country.population} 
                             flags={country.flags}
                         />
-                    })
+                    }) 
                 : <p>No countries matching your criteria</p>
 
             }

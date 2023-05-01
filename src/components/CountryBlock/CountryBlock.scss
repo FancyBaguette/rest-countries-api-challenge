@@ -8,6 +8,8 @@
     border-radius: 8px;
     img {
         width: 100%;
+        min-width: 300px;
+        min-height: 180px;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
         aspect-ratio: 5/3;
