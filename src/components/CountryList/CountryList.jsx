@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import CountryBlock from "../CountryBlock/CountryBlock"
+import CountryCard from "../CountryCard/CountryCard"
 import CountryListSkeleton from "../CountryListSkeleton/CountryListSkeleton"
 import './CountryList.scss'
 
@@ -52,7 +52,7 @@ const CountryList = (props) => {
                 !filteredCountriesArray ? <CountryListSkeleton amount={15}/> :
                 filteredCountriesArray.length > 0 ?
                     filteredCountriesArray.map(country => {
-                        return <CountryBlock
+                        return <CountryCard
                             key={country.cca3} 
                             cca3={country.cca3}
                             name={country.name.common} 
