@@ -20,6 +20,7 @@ const FilterSelector = (props) => {
             {
                 isExpanded &&
                 <div className={classNames('filter-selector-dropdown', {'filter-selector-dropdown--dark': isThemeDark})} >
+                    <button onClick={() => props.setRegionFilter(prevState => "")}>All</button>
                     <button onClick={() => props.setRegionFilter(prevState => "africa")}>Africa</button>
                     <button onClick={() => props.setRegionFilter(prevState => "americas")}>America</button>
                     <button onClick={() => props.setRegionFilter(prevState => "asia")}>Asia</button>

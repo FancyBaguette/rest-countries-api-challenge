@@ -11,6 +11,7 @@ A **[Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/rest-co
 - REST Countries API
 
 ## My changes to the app
+- Option to return to filtering by all regions without refreshing the site
 - Links to bordering countries are always under the "Border countries:" heading
 - Saving the theme to localstorage
 - Skeleton loader for the homepage
