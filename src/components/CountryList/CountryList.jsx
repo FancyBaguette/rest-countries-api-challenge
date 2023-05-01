@@ -19,8 +19,10 @@ const CountryList = (props) => {
             const filteredArray = countriesArray.filter(country => {
                 if (props.searchQuery && props.regionFilter) {
                     return (
-                        country.name.common.includes(props.searchQuery) ||
-                        country.name.common.toLowerCase().includes(props.searchQuery) &&
+                        ( 
+                            country.name.common.includes(props.searchQuery) ||
+                            country.name.common.toLowerCase().includes(props.searchQuery)
+                        ) &&
                         country.region.toLowerCase() === props.regionFilter
                     )
                 } else if (props.searchQuery) {
